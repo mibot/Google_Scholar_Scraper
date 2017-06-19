@@ -102,12 +102,8 @@ GScholar_Scraper <- function(input, since = 1900, write = F){
   if (write == T) {
     write.csv(result, "/Users/mbotto/Google_Scholar_Scraper/GScholar_Output.CSV",
               row.names = F)
-    
-    #shell.exec("GScholar_Output.CSV")
-  } #else {
-    return(result)
-  #}
-  
+  } 
+  return(result)
   
 }
 input <- "allintitle:live on mars"

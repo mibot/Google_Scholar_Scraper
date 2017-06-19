@@ -1,3 +1,11 @@
+# Author: Miguel Botto Tobar
+# Date: 2017-06-19
+# Description: This function will retrieve as information as it can about each result on a Google Scholar search page
+# Reference: Tony Breyal - https://github.com/tonybreyal/Blog-Reference-Functions/tree/master/R/googleScholarXScraper
+# Copyright (c) 2017, under the Creative Commons Attribution-NonCommercial 4.0 Unported (CC BY-NC 4.0) License 
+# For more information see: http://creativecommons.org/licenses/by-nc/4.0/
+# All rights reserved.
+
 GScholar_Scraper <- function(input, since = 1900, write = F){
   require(httr)
   require(XML)

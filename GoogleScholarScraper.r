@@ -72,7 +72,7 @@ GScholar_Scraper <- function(input, since = 1900, write = F){
     
     #links:
     main_url = GS_xpathSApply(doc,  "//h3//a[@href]", xmlGetAttr)
-    direct_url = GS_xpathSApply(doc,  "//div[@class='gs_ggs gs_fl']//a", xmlGetAttr)
+    direct_url = GS_xpathSApply(doc,  "//div[@class='gs_ggs gs_fl']//a[@href]", xmlGetAttr)
     
     options(warn=(-1))
     dat <- data.frame(TITLE = title, 
@@ -92,7 +92,7 @@ GScholar_Scraper <- function(input, since = 1900, write = F){
   
   result <- do.call("rbind", lapply(URLs, scraper_internal))
   if (write == T) {
-    write.csv(result, "~/Desktop/GScholar_Output.CSV",
+    write.csv(result, "/Users/mbotto/Google_Scholar_Scraper/GScholar_Output.CSV",
               row.names = F)
     
     #shell.exec("GScholar_Output.CSV")
@@ -104,4 +104,4 @@ GScholar_Scraper <- function(input, since = 1900, write = F){
 }
 input <- "allintitle:live on mars"
 df <- GScholar_Scraper(input, since = 2008, write = T)
-print(xtable(df), type="html", file="~/Desktop/results.html")
+print(xtable(df), type="html", file="/Users/mbotto/Google_Scholar_Scraper/GScholar_Output.html")

@@ -1,0 +1,12 @@
+---
+title: SLR
+output: 
+  html_document
+    
+---
+
+```{r kable}
+df <- read.csv(file = "/Users/mbotto/Google_Scholar_Scraper/GScholar_Output.csv", header = TRUE)
+knitr::kable(df, format = "html")
+```
+
